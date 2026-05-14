@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="as">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>থলুৱা আচাৰ | Premium Traditional Assamese Pickles</title>
+    <style>
+        :root {
+            --primary: #800000;
+            --primary-light: #a30000;
+            --accent: #d4af37; /* Premium Gold */
+            --dark: #1a1a1a;
+            --light: #fdfbf7; /* Off-white luxury background */
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', 'Segoe UI', Georgia, serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        /* Luxury Header Styling */
+        header {
+            background: linear-gradient(135deg, #4a0000 0%, var(--primary) 50%, #330000 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem 5rem;
+            position: relative;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+        }
+
+        .logo-container {
+            width: 140px;
+            height: 140px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 4px solid var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 3px 6px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #f0e6d2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Top Luxury Banner */
+        .delivery-banner {
+            background-color: var(--dark);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Global Section Layout */
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin: 4.5rem 0 2.5rem;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '♦';
+            display: block;
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Quality Standards Badges Section */
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .quality-badge {
+            background: white;
+            border: 1px solid #e0d8c8;
+            border-top: 3px solid var(--accent);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Premium About Layout */
+        .about {
+            background: white;
+            padding: 3.5rem 2rem;
+            border-radius: 6px;
+            box-shadow: 0 10px 40px rgba(128,0,0,0.03);
+            border: 1px solid #eee8dc;
+            text-align: center;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid #f0e6d2;
+            pointer-events: none;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        /* Premium Grid & Cards Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #eee8dc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(128,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .card-img {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.4rem;
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .card-img::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.15);
+        }
+
+        .bg-chicken { background: linear-gradient(135deg, #a73737, #7d1919); }
+        .bg-garlic { background: linear-gradient(135deg, #8d7b6e, #625247); }
+        .bg-bhoot { background: linear-gradient(135deg, #d35400, #962d00); }
+
+        .card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .price-badge {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+        }
+
+        .weight-badge {
+            font-size: 1rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Buttons Styling */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(180deg, #ffdf7a 0%, var(--accent) 100%);
+            color: #332200;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+            border: 1px solid #b89522;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(212,175,55,0.2);
+        }
+
+        .btn:hover {
+            background: linear-gradient(180deg, #ffe8a1 0%, #e5c14b 100%);
+            box-shadow: 0 6px 15px rgba(212,175,55,0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            font-size: 1.15rem;
+            border: 1px solid #219653;
+            box-shadow: 0 4px 12px rgba(46,204,113,0.2);
+            padding: 1rem;
+        }
+
+        .btn-whatsapp:hover {
+            background: linear-gradient(180deg, #40dd81 0%, #2ecc71 100%);
+            box-shadow: 0 6px 18px rgba(46,204,113,0.3);
+        }
+
+        /* Premium Info Section Design */
+        .info-section {
+            background: #f5efe4;
+            padding: 3.5rem 2rem;
+            border-radius: 8px;
+            border: 1px dashed #d4af37;
+            margin-bottom: 4.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .info-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Premium Review/Testimonials Carousel Grid */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border-left: 3px solid var(--accent);
+            font-style: italic;
+            position: relative;
+        }
+
+        .review-stars {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .review-author {
+            font-style: normal;
+            font-weight: bold;
+            color: var(--primary);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            display: block;
+        }
+
+        /* Premium Checkout Box Layout */
+        .contact-form {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+            border: 1px solid #eee8dc;
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 12px; left: 12px; right: 12px; bottom: 12px;
+            border: 1px solid #f9f6f0;
+            pointer-events: none;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #dcd1ba;
+            border-radius: 4px;
+            background-color: #fbfbfa;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+            box-shadow: 0 0 8px rgba(128,0,0,0.08);
+        }
+
+        .total-price-box {
+            background: #fffcf5;
+            padding: 1.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--primary);
+            border: 1px solid #f3e9d2;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            background-color: #111111;
+            color: #bbbbbb;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 6rem;
+            border-top: 4px solid var(--primary);
+        }
+
+        footer p {
+            margin-bottom: 0.8rem;
+        }
+
+        footer .footer-contact {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+        <div class="logo-container">
+            <span class="logo-text">থলুৱা আচাৰ</span>
+        </div>
+        <h1>থলুৱা আচাৰ</h1>
+        <p>পৰম্পৰাগত অসমীয়া সোৱাদ, মাত্ৰ ₹৫৯ ত!</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="delivery-banner">
+            🚚 সমগ্ৰ অসম জুৰি ডেলিভাৰীৰ ব্যৱস্থা আছে (Available across Assam!)
+        </div>
+
+        <section class="about">
+            <h2 class="section-title">আমাৰ বিষয়ে</h2>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">আমাৰ ইয়াত সম্পূৰ্ণ ঘৰুৱা পদ্ধতিৰে আৰু বিশুদ্ধ সৰিয়হ তেলেৰে থলুৱা আচাৰ প্ৰস্তুত কৰা হয়। কোনো ধৰণৰ কৃত্ৰিম ৰং বা ক্ষতিকাৰক ৰাসায়নিক পদাৰ্থ ব্যৱহাৰ কৰা নহয়।</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">আমাৰ আচাৰসমূহ (Our Products)</h2>
+            <div class="grid">
+                
+                <!-- Chicken Pickle -->
+                <div class="card">
+                    <div class="card-img bg-chicken">🍗 কুকুৰা মাংসৰ আচাৰ</div>
+                    <div class="card-content">
+                        <div class="card-title">কুকুৰা মাংসৰ আচাৰ<br><span style="font-size:1rem; color:#666;">(Chicken Pickle)</span></div>
+                        <div class="price-badge">₹৫৯</div>
+                        <div class="weight-badge">পৰিমাণ: ৫০ গ্ৰাম (50g)</div>
+                        <button class="btn" onclick="selectProduct('Chicken Pickle / কুকুৰা মাংসৰ আচাৰ', 59)">অৰ্ডাৰ কৰক</button>
+                    </div>
+                </div>
+
+                <!-- Garlic Pickle -->
+                <div class="card">
+                    <div class="card-img bg-garlic">🧄 নহৰুৰ আচাৰ</div>
+                    <div class="card-content">
+                        <div class="card-title">নহৰুৰ আচাৰ<br><span style="font-size:1rem; color:#666;">(Garlic Pickle)</span></div>
+                        <div class="price-badge">₹৫৯</div>
+                        <div class="weight-badge">পৰিমাণ: ৫০ গ্ৰাম (50g)</div>
+                        <button class="btn" onclick="selectProduct('Garlic Pickle / নহৰুৰ আচাৰ', 59)">অৰ্ডাৰ কৰক</button>
+                    </div>
+                </div>
+
+                <!-- Bhoot Jolokia Pickle -->
+                <div class="card">
+                    <div class="card-img bg-bhoot">🌶️ ভোট জলকীয়াৰ আচাৰ</div>
+                    <div class="card-content">
+                        <div class="card-title">ভোট জলকীয়াৰ আচাৰ<br><span style="font-size:1rem; color:#666;">(Bhoot Jolokia Pickle)</span></div>
+                        <div class="price-badge">₹৫৯</div>
+                        <div class="weight-badge">পৰিমাণ: ৫০ গ্ৰাম (50g)</div>
+                        <button class="btn" onclick="selectProduct('Bhoot Jolokia Pickle / ভোট জলকীয়াৰ আচাৰ', 59)">অৰ্ডাৰ কৰক</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>📦 ডেলিভাৰী খৰচ (Delivery Charges)</h3>
+                    <p>ডেলিভাৰী খৰচ ঠাই টুকুৰাৰ দূৰত্ব অনুসৰি যোগ কৰা হ'ব। (Delivery charges will be calculated based on your location during confirmation).</p>
+                </div>
+                <div class="info-box">
+                    <h3>💳 ধন পৰিশোধৰ নিয়ম (Payment Methods)</h3>
+                    <p>আমি অৰ্ডাৰ নিশ্চিত কৰাৰ পাছত Google Pay, PhonePe, UPI আৰু ক্যাশ অন ডেলিভাৰী (COD) গ্ৰহণ কৰো।</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">হোৱাটছএপযোগে অৰ্ডাৰ কৰক</h2>
+            <div class="contact-form">
+                <form id="orderForm" onsubmit="sendWhatsAppOrder(event)">
+                    <div class="form-group">
+                        <label for="name">আপোনাৰ নাম (Name)</label>
+                        <input type="text" id="name" required placeholder="ইয়াত লিখক">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">ফোন নম্বৰ (Phone)</label>
+                        <input type="tel" id="phone" required placeholder="মোবাইল নম্বৰ">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">ডেলিভাৰী ঠিকনা (Delivery Address across Assam)</label>
+                        <textarea id="address" rows="2" required placeholder="জিলা আৰু সম্পূৰ্ণ ঠিকনা লিখক..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-select">আচাৰ বাছনি কৰক (Select Pickle)</label>
+                        <select id="product-select" required onchange="calculateTotal()">
+                            <option value="">-- বাছনি কৰক --</option>
+                            <option value="Chicken Pickle / কুকুৰা মাংসৰ আচাৰ" data-price="59">কুকুৰা মাংসৰ আচাৰ (50g) - ₹৫৯</option>
+                            <option value="Garlic Pickle / নহৰুৰ আচাৰ" data-price="59">নহৰুৰ আচাৰ (50g) - ₹৫৯</option>
+                            <option value="Bhoot Jolokia Pickle / ভোট জলকীয়াৰ আচাৰ" data-price="59">ভোট জলকীয়াৰ আচাৰ (50g) - ₹৫৯</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">পৰিমাণ (Quantity / Packets)</label>
+                        <input type="number" id="quantity" min="1" value="1" required onchange="calculateTotal()" oninput="calculateTotal()">
+                    </div>
+                    <div class="form-group" style="background: #f0f0f0; padding: 1rem; border-radius: 4px; font-weight: bold; font-size: 1.1rem; color: var(--primary);">
+                        মুঠ মূল্য (Total Product Value): ₹<span id="totalPriceDisplay">0</span>
+                        <p style="font-size: 0.85rem; color: #555; font-weight: normal; margin-top: 0.2rem;">*ডেলিভাৰী চাৰ্জ সুকীয়া হ’ব</p>
+                    </div>
+                    <button type="submit" class="btn btn-whatsapp">WhatsApp ত অৰ্ডাৰ পঠিয়াওক 💬</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>📞 যোগাযোগৰ নম্বৰ: +91 70864 13149</p>
+        <p>&copy; 2026 থলুৱা আচাৰ (Tholua Achaar). সৰ্বস্বত্ব সংৰক্ষিত।</p>
+    </footer>
+
+    <script>
+        function selectProduct(productName) {
+            document.getElementById('product-select').value = productName;
+            calculateTotal();
+            document.getElementById('product-select').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function calculateTotal() {
+            const select = document.getElementById('product-select');
+            const quantity = parseInt(document.getElementById('quantity').value) || 0;
+            const selectedOption = select.options[select.selectedIndex];
+            
+            if (!selectedOption || select.value === "") {
+                document.getElementById('totalPriceDisplay').innerText = "0";
+                return 0;
+            }
+            
+            const price = parseInt(selectedOption.getAttribute('data-price')) || 0;
+            const total = price * quantity;
+            document.getElementById('totalPriceDisplay').innerText = total;
+            return total;
+        }
+
+        function sendWhatsAppOrder(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
